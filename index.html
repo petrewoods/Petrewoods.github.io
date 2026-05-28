@@ -1,391 +1,483 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Dr Peter Woods</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr Peter Woods</title>
+  <meta name="description" content="Dr Peter Woods — Physician, researcher and digital health builder. MRCP. Oxford & Warwick.">
+  <meta property="og:title" content="Dr Peter Woods">
+  <meta property="og:description" content="Physician · researcher · builder — acute medicine, academic research and digital health across the UK and New Zealand.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    :root {
+      --bg:       #070d1a;
+      --bg2:      #0c1525;
+      --surface:  rgba(255,255,255,0.04);
+      --surface2: rgba(255,255,255,0.07);
+      --border:   rgba(255,255,255,0.08);
+      --border2:  rgba(255,255,255,0.14);
+      --text:     #dce6f2;
+      --text-mid: #8da9c4;
+      --text-dim: #4a6080;
+      --mint:     #5bc0be;
+      --mint-dim: rgba(91,192,190,0.12);
+      --radius:   14px;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-feature-settings: 'cv11','ss01';
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-				<!-- Header -->
-					<header id="header">
-						<ul class="icons">
-							<li><a href= "https://www.linkedin.com/in/DrPWoods/"class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
-							<li><a href="https://github.com/petrewoods/petrewoods" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-						<div class="logo">
-							<span class="icon fa-dna"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Dr Peter Woods</h1>
-								<p>Foundation Doctor working in the West Midlands <a> </a> <br />
-								Passionate about Physiology, Clinical Medicine, and using Data Science to improve health and wellbeing</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#Education">Education</a></li>
-								<li><a href="#Foundation">Foundation</a></li>
-								<li><a href="#Publications">Publications</a></li>
-								<li><a href="#Projects">Projects</a></li>
-								<li><a href="#CV">CV</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+    /* ── Gradient orbs ── */
+    .orbs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.18; }
+    .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, #5bc0be, transparent 70%); top: -200px; left: -100px; animation: drift1 18s ease-in-out infinite alternate; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, #3b82f6, transparent 70%); bottom: 20%; right: -150px; animation: drift2 22s ease-in-out infinite alternate; }
+    .orb-3 { width: 350px; height: 350px; background: radial-gradient(circle, #8b5cf6, transparent 70%); top: 50%; left: 40%; animation: drift3 16s ease-in-out infinite alternate; }
+    @keyframes drift1 { to { transform: translate(80px, 120px); } }
+    @keyframes drift2 { to { transform: translate(-60px, -100px); } }
+    @keyframes drift3 { to { transform: translate(40px, -80px); opacity: 0.10; } }
 
-				<!-- Main -->
-					<div id="main">
+    /* ── Nav ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(7,13,26,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-name { font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.3px; }
+    .nav-name span { color: var(--mint); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color .15s; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.2px; }
+    .nav-links a:hover { color: var(--text); }
 
-						<!-- Education -->
-						<article id="Education">
-							<h2 class="major">Education</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p> Place holder gap  </p>
-							<p>While I work on my CV</p>
-						</article>	
+    /* ── Layout ── */
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
 
-						<!-- Foundation -->
-						<article id="Foundation">
-							<h2 class="major">Foundation</h2>
-							span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p> Place holder gap. </p>
-							<p>While I work on my CV</p>
-						</article>	
+    /* ── Hero ── */
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 80px; position: relative; }
+    .hero-content { max-width: 640px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--mint); margin-bottom: 28px; }
+    .hero-tag::before { content: ''; width: 32px; height: 1px; background: var(--mint); }
+    h1 { font-size: clamp(44px, 7vw, 72px); font-weight: 700; letter-spacing: -2.5px; line-height: 1.02; color: #fff; margin-bottom: 8px; }
+    .hero-role { font-size: clamp(18px, 3vw, 26px); font-weight: 400; color: var(--text-mid); letter-spacing: -0.5px; margin-bottom: 28px; min-height: 1.4em; }
+    .hero-role .word { display: inline-block; transition: opacity .3s, transform .3s; }
+    .hero-role .word.out { opacity: 0; transform: translateY(-8px); }
+    .hero-bio { font-size: 17px; color: var(--text-mid); line-height: 1.65; max-width: 520px; margin-bottom: 40px; }
+    .hero-bio strong { color: var(--text); font-weight: 500; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .15s; letter-spacing: 0.1px; }
+    .btn-mint { background: var(--mint); color: #0b2545; }
+    .btn-mint:hover { background: #6dcecb; transform: translateY(-1px); }
+    .btn-ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { background: var(--surface2); border-color: var(--border2); transform: translateY(-1px); }
+    .hero-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 0.3px; }
+    .hero-meta a { color: var(--text-dim); text-decoration: none; transition: color .15s; }
+    .hero-meta a:hover { color: var(--mint); }
+    .hero-meta span { margin: 0 8px; }
 
-						<!-- Publications -->
-						<article id="Publications">
-							<h2 class="major">Publications</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p> Place holder gap .</p>
-							<p>While I work on my CV</p>
-						</article>		
+    /* ── Scroll hint ── */
+    .scroll-hint { position: absolute; bottom: 40px; left: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-dim); font-size: 11px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.8px; text-transform: uppercase; animation: scrollBob 2.5s ease-in-out infinite; }
+    @keyframes scrollBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
-						<!-- Projects -->
-						<article id="Projects">
-							<h2 class="major">Projects</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p> Place holder gap  <a href="#work">awesome work</a>.</p>
-							<p>While I work on my CV</p>
-						</article>	
-						<!-- about -->
-						<article id="about">
-							<h2 class="major">about</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p> Place holder gap . </p>
-							<p>While I work on my CV</p>
-						</article>		
+    /* ── Sections ── */
+    section { padding: 96px 0; }
+    .section-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; color: var(--mint); display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); max-width: 80px; }
+    h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -1px; color: #fff; margin-bottom: 40px; line-height: 1.1; }
 
-						<!-- CV -->
-						<article id="CV">
-							<h2 class="major">CV</h2>
-							<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-							<p> Place holder gap  <a href="#work">awesome work</a>.</p>
-							<p>While I work on my CV</p>
-						</article>		
+    /* ── Reveal animations ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href= "https://www.linkedin.com/in/DrPWoods/"class="icon brands fa-linkedin"><span class="label">fa-linkedin</span></a></li>
-									<li><a href="https://github.com/petrewoods/petrewoods" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									</ul>
-							</article>
+    .divider { height: 1px; background: var(--border); }
 
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
+    /* ── Projects ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 14px; transition: border-color .2s, background .2s, transform .2s; text-decoration: none; color: inherit; position: relative; overflow: hidden; }
+    .project-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 0 0, rgba(91,192,190,0.12), transparent 60%); opacity: 0; transition: opacity .3s; }
+    .project-card:hover::before { opacity: 1; }
+    .project-card:hover { border-color: rgba(91,192,190,0.3); background: var(--surface2); transform: translateY(-2px); }
+    .project-badge { display: inline-flex; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; background: var(--mint-dim); color: var(--mint); border: 1px solid rgba(91,192,190,0.2); width: fit-content; }
+    .project-badge.building { background: rgba(139,92,246,0.1); color: #a78bfa; border-color: rgba(139,92,246,0.2); }
+    .project-badge.past { background: var(--surface); color: var(--text-dim); border-color: var(--border); }
+    .project-title { font-size: 20px; font-weight: 700; letter-spacing: -0.4px; color: #fff; }
+    .project-desc { font-size: 14px; color: var(--text-mid); line-height: 1.6; flex: 1; }
+    .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--mint); text-decoration: none; transition: gap .15s; }
+    .project-card:hover .project-link { gap: 10px; }
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+    /* ── Timeline ── */
+    .timeline { display: flex; flex-direction: column; }
+    .timeline-item { display: grid; grid-template-columns: 160px 1fr; gap: 0 32px; padding: 28px 0; border-bottom: 1px solid var(--border); }
+    .timeline-item:first-child { border-top: 1px solid var(--border); }
+    .timeline-date { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-dim); letter-spacing: 0.2px; padding-top: 3px; }
+    .timeline-role { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 3px; letter-spacing: -0.2px; }
+    .timeline-org { font-size: 13.5px; color: var(--mint); margin-bottom: 8px; font-weight: 500; }
+    .timeline-detail { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+    /* ── Education ── */
+    .edu-list { display: flex; flex-direction: column; gap: 12px; }
+    .edu-item { display: grid; grid-template-columns: 1fr auto; gap: 4px 24px; padding: 18px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+    .edu-qual { font-size: 15px; font-weight: 600; color: #fff; letter-spacing: -0.2px; }
+    .edu-inst { font-size: 13px; color: var(--text-mid); }
+    .edu-note { font-size: 12px; color: var(--mint); font-weight: 500; margin-top: 2px; }
+    .edu-year { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-dim); text-align: right; white-space: nowrap; align-self: start; padding-top: 2px; }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+    /* ── Publications ── */
+    .pub-list { display: flex; flex-direction: column; }
+    .pub-item { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    .pub-item:first-child { border-top: 1px solid var(--border); }
+    .pub-title { font-size: 14.5px; font-weight: 500; color: var(--text); line-height: 1.5; margin-bottom: 5px; }
+    .pub-meta { font-size: 12.5px; color: var(--text-dim); line-height: 1.5; }
+    .pub-meta a { color: var(--mint); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; }
+    .pub-meta a:hover { text-decoration: underline; }
+    .pub-more { margin-top: 20px; }
+    .btn-expand { background: none; border: 1px solid var(--border); color: var(--text-mid); padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .15s; font-family: 'Inter', sans-serif; }
+    .btn-expand:hover { border-color: var(--border2); color: var(--text); background: var(--surface); }
+    .pub-hidden { display: none; }
+    .pub-hidden.shown { display: block; }
 
-								<section>
-									<h3 class="major">Lists</h3>
+    /* ── Prizes ── */
+    .prizes { display: flex; flex-direction: column; gap: 12px; }
+    .prize-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; }
+    .prize-icon { color: var(--mint); flex-shrink: 0; margin-top: 2px; }
+    .prize-title { font-size: 14px; font-weight: 500; color: var(--text); }
+    .prize-meta { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+    /* ── Contact ── */
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .contact-text p { font-size: 16px; color: var(--text-mid); line-height: 1.65; margin-bottom: 0; }
+    .social-links { display: flex; flex-direction: column; gap: 12px; }
+    .social-link { display: flex; align-items: center; gap: 14px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500; transition: all .15s; }
+    .social-link:hover { background: var(--surface2); border-color: var(--border2); transform: translateX(4px); }
+    .social-link-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--mint); }
+    .social-link-label { flex: 1; }
+    .social-link-sub { font-size: 12px; color: var(--text-dim); margin-top: 1px; }
+    .arrow-icon { color: var(--text-dim); transition: transform .15s; }
+    .social-link:hover .arrow-icon { transform: translateX(3px); color: var(--text); }
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 32px 0; }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .foot-inner p { font-size: 12.5px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+    .foot-inner a { color: var(--text-dim); text-decoration: none; }
+    .foot-inner a:hover { color: var(--mint); }
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .nav-links { gap: 16px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+      .timeline-date { order: -1; }
+      .contact-inner { grid-template-columns: 1fr; gap: 32px; }
+      .edu-item { grid-template-columns: 1fr; }
+      .edu-year { text-align: left; }
+      section { padding: 64px 0; }
+      .wrap { padding: 0 20px; }
+      .nav-inner { padding: 0 20px; }
+    }
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+  <div class="orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-name" href="#top">Dr Peter <span>Woods</span></a>
+      <div class="nav-links">
+        <a href="#building">Building</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
+  <div class="wrap">
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <div class="hero-tag">BA(Oxon) · MBChB · MRCP</div>
+        <h1>Dr Peter<br>Woods</h1>
+        <p class="hero-role">
+          <span class="word" id="rotating-word">Physician</span><span style="color:var(--text-dim)"> · researcher · builder</span>
+        </p>
+        <p class="hero-bio">
+          <strong>Physician</strong> with a track record spanning acute medicine, academic research and digital health innovation across the UK and New Zealand. Currently building tools that make clinical life a little easier.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-mint" href="#building">What I'm building</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/DrPWoods/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+        <p class="hero-meta">
+          GMC: 7751182 <span>·</span>
+          ORCID: <a href="https://orcid.org/0000-0002-0910-8291" target="_blank">0000-0002-0910-8291</a>
+        </p>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        scroll
+      </div>
+    </section>
+  </div>
 
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
+  <div class="divider"></div>
 
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
+  <div class="wrap">
+    <section id="building">
+      <div class="section-label reveal">Building</div>
+      <h2 class="reveal reveal-delay-1">Digital health tools<br>for clinicians.</h2>
+      <div class="projects-grid">
+        <a class="project-card reveal reveal-delay-1" href="https://petrewoods.github.io/portfol-io-policies" target="_blank">
+          <span class="project-badge">Live · iOS</span>
+          <div class="project-title">Portfol.io</div>
+          <p class="project-desc">On-device-anonymised dictation portfolio for UK doctors and trainees. Speak after a case — structured ePortfolio entries generated automatically and mapped to CiPs or GPCs.</p>
+          <span class="project-link">View site <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <div class="project-card reveal reveal-delay-2">
+          <span class="project-badge building">In development</span>
+          <div class="project-title">MedPrep</div>
+          <p class="project-desc">High-fidelity mock medical interview tool with instant AI-powered feedback. Built for IMT, ST and specialty applications — practice as many times as you need.</p>
+          <span class="project-link" style="color:var(--text-dim);cursor:default">Coming soon</span>
+        </div>
+        <div class="project-card reveal reveal-delay-3">
+          <span class="project-badge past">2022 – 2024</span>
+          <div class="project-title">Pause</div>
+          <p class="project-desc">Co-founded a digital health startup from idea to spin-out — a mobile app using behavioural micro-interventions to support evidence-based parenting. Published across JMIR and BJPsych Open.</p>
+          <span class="project-link" style="color:var(--text-dim);cursor:default">Spun out</span>
+        </div>
+      </div>
+    </section>
+  </div>
 
-							</article>
+  <div class="divider"></div>
 
-					</div>
+  <div class="wrap">
+    <section id="experience">
+      <div class="section-label reveal">Experience</div>
+      <h2 class="reveal reveal-delay-1">Clinical career.</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Jul 2025 – Mar 2026</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Relief Medical Officer</div>
+            <div class="timeline-org">Te Whatu Ora · Health New Zealand</div>
+            <div class="timeline-detail">Covering multiple specialities including rural hospital medicine at Christchurch Hospital and Greymouth Hospital.</div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Aug 2024 – Apr 2025</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Locum Doctor</div>
+            <div class="timeline-org">Sandwell and West Birmingham NHS Trust</div>
+            <div class="timeline-detail">Stroke, Emergency Medicine, Acute Medicine and General Medicine.</div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Mar – Aug 2024</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Bank Doctor</div>
+            <div class="timeline-org">Warwick Hospital · SWFT</div>
+            <div class="timeline-detail">Haematology, rehabilitation medicine and geriatrics.</div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Aug 2022 – Mar 2024</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Clinical Research Fellow</div>
+            <div class="timeline-org">Central England Rehabilitation Unit · SWFT</div>
+            <div class="timeline-detail">Research fellow at the largest Level 1 neurorehabilitation unit in the country. Physiology tutor at St Catherine's and Hertford Colleges, University of Oxford.</div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-date">Aug 2020 – Aug 2022</div>
+          <div class="timeline-body">
+            <div class="timeline-role">Junior Doctor · Foundation Programme</div>
+            <div class="timeline-org">UHCW · SWFT · CWPT</div>
+            <div class="timeline-detail">Six rotations: Respiratory Medicine, General Surgery, Haematology, Emergency Medicine, Neurosurgery, Psychiatry.</div>
+          </div>
+        </div>
+      </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+      <div style="margin-top:64px">
+        <div class="section-label reveal">Education</div>
+        <div class="edu-list">
+          <div class="edu-item reveal">
+            <div><div class="edu-qual">MRCP</div><div class="edu-inst">Royal College of Physicians (UK)</div><div class="edu-note">Part 1, Part 2 Written and PACES — all first attempt</div></div>
+            <div class="edu-year">2023</div>
+          </div>
+          <div class="edu-item reveal">
+            <div><div class="edu-qual">MBChB · Distinction</div><div class="edu-inst">University of Warwick</div><div class="edu-note">Distinction in Phase III Finals, Phase II MCQ &amp; SAQ</div></div>
+            <div class="edu-year">2016 – 2020</div>
+          </div>
+          <div class="edu-item reveal">
+            <div><div class="edu-qual">BA Human Sciences · 2:1 (69%)</div><div class="edu-inst">University of Oxford</div></div>
+            <div class="edu-year">2013 – 2016</div>
+          </div>
+          <div class="edu-item reveal">
+            <div><div class="edu-qual">PGCert Medical Education · Pass</div><div class="edu-inst">University of Warwick</div></div>
+            <div class="edu-year">2024</div>
+          </div>
+          <div class="edu-item reveal">
+            <div><div class="edu-qual">PGCert Genomic Medicine · Merit</div><div class="edu-inst">University of Warwick</div></div>
+            <div class="edu-year">2023</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-			</div>
+  <div class="divider"></div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+  <div class="wrap">
+    <section id="publications">
+      <div class="section-label reveal">Research</div>
+      <h2 class="reveal reveal-delay-1">Publications.</h2>
+      <div class="pub-list reveal">
+        <div class="pub-item">
+          <div class="pub-title">Enhancing Parenting Using AI: Exploratory Hackathon</div>
+          <div class="pub-meta">Woods P, Donohoe S, Turtle L, et al. · <em>JMIR Formative Research</em> · 2025 · <a href="https://doi.org/10.2196/68780" target="_blank">10.2196/68780 ↗</a></div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-title">Augmenting Parenting Programs with the Pause Mobile App: Mixed Methods Evaluation</div>
+          <div class="pub-meta">Hodson N, Woods PI, Donohoe S, et al. · <em>JMIR Pediatrics and Parenting</em> · 2025 · <a href="https://doi.org/10.2196/68807" target="_blank">10.2196/68807 ↗</a></div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-title">Evaluating a Mobile App Supporting Evidence-Based Parenting Skills: Thematic Analysis</div>
+          <div class="pub-meta">Hodson N, Woods P, et al. · <em>JMIR Pediatrics and Parenting</em> · 2024 · <a href="https://doi.org/10.2196/53907" target="_blank">10.2196/53907 ↗</a></div>
+        </div>
+        <div class="pub-hidden" id="pub-extra">
+          <div class="pub-item">
+            <div class="pub-title">Guillain-Barré Syndrome</div>
+            <div class="pub-meta">Shedd N, Woods P &amp; Hoad D · <em>Evolution, Medicine, and Public Health</em> · 2024 · <a href="https://doi.org/10.1093/emph/eoae013" target="_blank">10.1093/emph/eoae013 ↗</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Disparities in Access to Group Parenting Training Programmes</div>
+            <div class="pub-meta">Gorringe R, Woods P, et al. · <em>BJPsych Open</em> · 2024 · <a href="https://doi.org/10.1192/bjo.2024.153" target="_blank">10.1192/bjo.2024.153 ↗</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">A Digital Microintervention Supporting Evidence-Based Parenting Skills: Development Study</div>
+            <div class="pub-meta">Hodson N, Woods P, et al. · <em>JMIR Formative Research</em> · 2024 · <a href="https://doi.org/10.2196/54892" target="_blank">10.2196/54892 ↗</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Digital micro interventions to support parenting: Evaluating time out apps</div>
+            <div class="pub-meta">Abdelhameed F, Hodson N &amp; Woods P · <em>Child and Adolescent Mental Health</em> · 2023 · <a href="https://doi.org/10.1111/camh.12632" target="_blank">10.1111/camh.12632 ↗</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Benefits of index telephone consultations on the two-week wait colorectal cancer pathway</div>
+            <div class="pub-meta">Wanigasooriya K, Sarma DR, Woods P, et al. · <em>Annals of the Royal College of Surgeons</em> · 2022 · <a href="https://doi.org/10.1308/rcsann.2021.0364" target="_blank">10.1308/rcsann.2021.0364 ↗</a></div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">High-altitude pulmonary edema</div>
+            <div class="pub-meta">Woods P &amp; Alcock J · <em>Evolution, Medicine, and Public Health</em> · 2021 · <a href="https://doi.org/10.1093/emph/eoaa046" target="_blank">10.1093/emph/eoaa046 ↗</a></div>
+          </div>
+        </div>
+        <div class="pub-more">
+          <button class="btn-expand" id="pub-toggle" onclick="togglePubs()">Show 6 more publications</button>
+        </div>
+      </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <div style="margin-top:48px">
+        <div class="section-label reveal" style="margin-bottom:20px">Prizes &amp; awards</div>
+        <div class="prizes reveal">
+          <div class="prize-item">
+            <div class="prize-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></div>
+            <div><div class="prize-title">National Poster Prize — Clinical Forensic &amp; Legal Medicine</div><div class="prize-meta">Royal Society of Medicine · 2019</div></div>
+          </div>
+          <div class="prize-item">
+            <div class="prize-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg></div>
+            <div><div class="prize-title">Movement Disorders Essay Prize</div><div class="prize-meta">British Geriatrics Society · 2022</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-	</body>
+  <div class="divider"></div>
+
+  <div class="wrap">
+    <section id="contact">
+      <div class="contact-inner">
+        <div class="contact-text">
+          <div class="section-label reveal">Contact</div>
+          <h2 class="reveal reveal-delay-1">Get in touch.</h2>
+          <p class="reveal reveal-delay-2">Whether it's about Portfol.io, MedPrep, a research collaboration, or clinical work — happy to hear from you.</p>
+        </div>
+        <div class="social-links reveal reveal-delay-2">
+          <a class="social-link" href="mailto:peter.woods@me.com">
+            <div class="social-link-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></div>
+            <div class="social-link-label"><div>Email</div><div class="social-link-sub">peter.woods@me.com</div></div>
+            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/DrPWoods/" target="_blank" rel="noopener">
+            <div class="social-link-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></div>
+            <div class="social-link-label"><div>LinkedIn</div><div class="social-link-sub">linkedin.com/in/DrPWoods</div></div>
+            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="social-link" href="https://github.com/petrewoods" target="_blank" rel="noopener">
+            <div class="social-link-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+            <div class="social-link-label"><div>GitHub</div><div class="social-link-sub">github.com/petrewoods</div></div>
+            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="social-link" href="https://orcid.org/0000-0002-0910-8291" target="_blank" rel="noopener">
+            <div class="social-link-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+            <div class="social-link-label"><div>ORCID</div><div class="social-link-sub">0000-0002-0910-8291</div></div>
+            <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-inner">
+        <p>Dr Peter Woods · <a href="mailto:peter.woods@me.com">peter.woods@me.com</a></p>
+        <p>© 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Rotating word
+    const words = ['Physician', 'Researcher', 'Builder'];
+    let idx = 0;
+    const wordEl = document.getElementById('rotating-word');
+    setInterval(() => {
+      wordEl.classList.add('out');
+      setTimeout(() => { idx = (idx + 1) % words.length; wordEl.textContent = words[idx]; wordEl.classList.remove('out'); }, 320);
+    }, 2600);
+
+    // Publications expand
+    function togglePubs() {
+      const extra = document.getElementById('pub-extra');
+      const btn = document.getElementById('pub-toggle');
+      const shown = extra.classList.toggle('shown');
+      btn.textContent = shown ? 'Show fewer' : 'Show 6 more publications';
+    }
+  </script>
+</body>
 </html>
