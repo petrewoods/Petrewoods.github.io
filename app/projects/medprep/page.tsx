@@ -29,10 +29,10 @@ export default function MedPrep() {
       <section className="border-b border-line">
         <Container className="py-20 sm:py-24">
           <Link
-            href="/"
+            href="/work"
             className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-muted transition-colors hover:text-ink"
           >
-            ← Index
+            ← Work
           </Link>
           <div className="mt-8 max-w-3xl">
             <Eyebrow>Clinical Simulation &amp; Education · 2024</Eyebrow>

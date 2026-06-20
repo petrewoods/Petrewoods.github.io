@@ -1,140 +1,254 @@
 import Link from "next/link";
-import { Container, Eyebrow, Divider } from "@/components/ui";
+import {
+  Container,
+  Eyebrow,
+  MetaItem,
+  PinIcon,
+  CapIcon,
+  BadgeIcon,
+} from "@/components/ui";
+import { Reveal } from "@/components/Reveal";
 
-const projects = [
+const building = [
   {
-    no: "01",
-    slug: "annwn",
-    title: "Annwn",
-    kind: "Interactive AV Installation",
-    summary:
-      "Interactive LED clouds for the Hundred Heads festival — Fadecandy, a Raspberry Pi and LED strips, made responsive to the crowd below with a Kinect.",
-    year: "Hundred Heads",
+    name: "Portfol.io",
+    status: "Live · iOS",
+    href: "/projects/portfolio",
+    blurb:
+      "On-device-anonymised dictation portfolio for UK doctors — speak after a case, get structured ePortfolio entries mapped to CiPs and GPCs.",
   },
   {
-    no: "02",
-    slug: "whoop",
-    title: "WHOOP → WhatsApp",
-    kind: "API Integration",
-    summary:
-      "An automated bridge that refreshes WHOOP tokens daily, parses physiological webhooks, and broadcasts a clean morning briefing to a WhatsApp group.",
-    year: "2025",
+    name: "MedPrep",
+    status: "In development",
+    href: "/projects/medprep",
+    blurb:
+      "High-fidelity mock interview tool with instant AI feedback, for IMT, ST and specialty applicants.",
   },
   {
-    no: "03",
-    slug: "football",
-    title: "Match Model",
-    kind: "Prediction Matrix",
-    summary:
-      "A Poisson-based football prediction model benchmarked, week by week, against bookmaker odds — engineered from team-form vectors and a tidy data pipeline.",
-    year: "2024",
+    name: "Match Model",
+    status: "World Cup 2026",
+    href: "/projects/football",
+    blurb:
+      "A Poisson prediction model for the 2026 World Cup, benchmarked week by week against bookmaker odds.",
   },
   {
-    no: "04",
-    slug: "medprep",
-    title: "MedPrep",
-    kind: "Clinical Simulation",
-    summary:
-      "A high-fidelity mock interview tool with instant AI feedback, built on document-evaluating security rules — and the subject of a peer-reviewed manuscript.",
-    year: "2024",
+    name: "Annwn",
+    status: "Hundred Heads",
+    href: "/projects/annwn",
+    blurb:
+      "Interactive LED clouds that read the crowd below and answer in light — Fadecandy, a Raspberry Pi and a Kinect.",
+  },
+];
+
+const experience = [
+  { when: "2026 – present", role: "Internal Medicine Trainee", org: "Manchester" },
+  {
+    when: "2025 – 2026",
+    role: "Relief Medical Officer",
+    org: "Te Whatu Ora · New Zealand",
+  },
+  {
+    when: "2022 – 2024",
+    role: "Clinical Research Fellow",
+    org: "Central England Rehabilitation Unit",
+  },
+];
+
+const writing = [
+  {
+    title: "Enhancing Parenting Using AI: Exploratory Hackathon",
+    meta: "JMIR Formative Research · 2025",
+    doi: "10.2196/68780",
+  },
+  {
+    title: "Guillain-Barré Syndrome",
+    meta: "Evolution, Medicine, and Public Health · 2024",
+    doi: "10.1093/emph/eoae013",
+  },
+  {
+    title: "Disparities in Access to Group Parenting Training Programmes",
+    meta: "BJPsych Open · 2024",
+    doi: "10.1192/bjo.2024.153",
   },
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="border-b border-line">
-        <Container className="py-20 sm:py-28">
-          <Eyebrow>BA(Oxon) · MBChB · MRCP</Eyebrow>
-          <h1 className="mt-6 max-w-3xl font-serif text-display text-ink text-balance">
+      <section className="relative isolate overflow-hidden border-b border-line">
+        <div className="animate-drift absolute -right-32 -top-24 -z-10 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl" />
+        <Container className="py-24 sm:py-32">
+          <Reveal as="div">
+            <Eyebrow>BA(Oxon) · MBChB · MRCP</Eyebrow>
+          </Reveal>
+          <Reveal as="h1" delay={80} className="mt-6 max-w-3xl font-serif text-display text-ink text-balance">
             Dr Peter Woods
-          </h1>
-          <p className="mt-6 max-w-2xl text-lead text-ink-soft text-pretty">
-            Physician, researcher and builder, currently an Internal Medicine
-            Trainee in Manchester. I work across acute medicine, academic
-            research and applied AI — and I build software that makes clinical
-            life a little easier. This is a selection of things I have designed
-            and shipped.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-muted">
-            <span>Internal Medicine Trainee · Manchester</span>
-            <span>Oxford &amp; Warwick</span>
-            <span>GMC 7751182</span>
-          </div>
+          </Reveal>
+          <Reveal as="p" delay={160} className="mt-6 max-w-2xl text-lead text-ink-soft text-pretty">
+            A physician, researcher and builder — currently an Internal Medicine
+            Trainee in Manchester. My work spans acute and general medicine,
+            clinical research, and software that makes clinical life a little
+            easier.
+          </Reveal>
+          <Reveal delay={240} className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
+            <MetaItem icon={<PinIcon />} label="Based" value="Manchester" />
+            <MetaItem icon={<CapIcon />} label="Studied" value="Oxford & Warwick" />
+            <MetaItem icon={<BadgeIcon />} label="GMC" value="7751182" />
+          </Reveal>
         </Container>
       </section>
 
-      <section id="work" className="scroll-mt-20">
+      <section id="building" className="scroll-mt-20 border-b border-line">
         <Container className="py-16 sm:py-20">
-          <div className="grid gap-4 sm:grid-cols-[8rem_1fr] sm:gap-10">
-            <Eyebrow className="pt-1">Selected work</Eyebrow>
-            <p className="max-w-xl text-pretty text-ink-soft">
-              Four case studies spanning interactive media, applied AI and
-              clinical software — each documented end to end.
-            </p>
-          </div>
-
-          <ol className="mt-12 border-t border-line">
-            {projects.map((p) => (
-              <li key={p.slug}>
-                <Link
-                  href={`/projects/${p.slug}`}
-                  className="group grid items-baseline gap-y-3 border-b border-line py-8 transition-colors hover:bg-paper-raised sm:grid-cols-[8rem_1fr_auto] sm:gap-x-10"
-                >
-                  <span className="font-mono text-xs text-faint">{p.no}</span>
-                  <div>
-                    <h3 className="font-serif text-2xl text-ink sm:text-3xl">
-                      {p.title}
-                      <span className="ml-3 align-middle font-mono text-xs uppercase tracking-[var(--tracking-label)] text-accent">
-                        {p.kind}
+          <div className="grid gap-10 sm:grid-cols-[8rem_1fr] sm:gap-16">
+            <div className="sm:sticky sm:top-24 sm:self-start">
+              <Eyebrow>Building</Eyebrow>
+            </div>
+            <div>
+              <Reveal as="p" className="max-w-xl text-lead text-ink-soft text-pretty">
+                Tools and experiments — clinical software I ship for doctors, and
+                things I make for the curiosity of it.
+              </Reveal>
+              <ul className="mt-10 border-t border-line">
+                {building.map((b, i) => (
+                  <Reveal as="li" key={b.name} delay={i * 70}>
+                    <Link
+                      href={b.href}
+                      className="group grid gap-y-2 border-b border-line py-6 transition-colors hover:bg-paper-raised sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-x-8"
+                    >
+                      <div>
+                        <h3 className="font-serif text-xl text-ink">
+                          {b.name}
+                          <span className="ml-3 align-middle font-mono text-xs uppercase tracking-[var(--tracking-label)] text-accent">
+                            {b.status}
+                          </span>
+                        </h3>
+                        <p className="mt-2 max-w-xl text-pretty text-ink-soft">
+                          {b.blurb}
+                        </p>
+                      </div>
+                      <span className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-muted transition-transform group-hover:translate-x-1 sm:justify-self-end">
+                        →
                       </span>
-                    </h3>
-                    <p className="mt-3 max-w-2xl text-pretty text-ink-soft">
-                      {p.summary}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-4 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-muted sm:justify-self-end">
-                    <span>{p.year}</span>
-                    <span className="transition-transform group-hover:translate-x-1">
-                      →
-                    </span>
-                  </div>
+                    </Link>
+                  </Reveal>
+                ))}
+              </ul>
+              <Reveal className="mt-8">
+                <Link
+                  href="/work"
+                  className="link-underline font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink"
+                >
+                  All work →
                 </Link>
-              </li>
-            ))}
-          </ol>
+              </Reveal>
+            </div>
+          </div>
         </Container>
       </section>
 
-      <section>
-        <Container>
-          <Divider />
-          <div className="grid gap-4 py-16 sm:grid-cols-[8rem_1fr] sm:gap-10">
-            <Eyebrow className="pt-1">Elsewhere</Eyebrow>
-            <p className="max-w-xl text-pretty text-ink-soft">
-              For clinical history, publications and prizes, see{" "}
-              <Link
-                className="text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-ink"
-                href="/about"
-              >
-                about
-              </Link>
-              , or my profile on{" "}
-              <a
-                className="text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-ink"
-                href="https://www.linkedin.com/in/DrPWoods/"
-              >
-                LinkedIn
-              </a>{" "}
-              and{" "}
-              <a
-                className="text-ink underline decoration-line underline-offset-4 transition-colors hover:decoration-ink"
-                href="https://orcid.org/0000-0002-0910-8291"
-              >
-                ORCID
-              </a>
-              .
-            </p>
+      <section className="border-b border-line">
+        <Container className="py-16 sm:py-20">
+          <div className="grid gap-10 sm:grid-cols-[8rem_1fr] sm:gap-16">
+            <div className="sm:sticky sm:top-24 sm:self-start">
+              <Eyebrow>Experience</Eyebrow>
+            </div>
+            <div>
+              <ul className="border-t border-line">
+                {experience.map((e, i) => (
+                  <Reveal as="li" key={e.role} delay={i * 70}>
+                    <div className="grid gap-1 border-b border-line py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-8">
+                      <div>
+                        <div className="font-serif text-lg text-ink">{e.role}</div>
+                        <div className="text-sm text-muted">{e.org}</div>
+                      </div>
+                      <div className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-faint sm:text-right">
+                        {e.when}
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </ul>
+              <Reveal className="mt-8">
+                <Link
+                  href="/about"
+                  className="link-underline font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink"
+                >
+                  Full clinical history &amp; education →
+                </Link>
+              </Reveal>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-line">
+        <Container className="py-16 sm:py-20">
+          <div className="grid gap-10 sm:grid-cols-[8rem_1fr] sm:gap-16">
+            <div className="sm:sticky sm:top-24 sm:self-start">
+              <Eyebrow>Research</Eyebrow>
+            </div>
+            <div>
+              <Reveal as="p" className="max-w-xl text-lead text-ink-soft text-pretty">
+                Selected publications, from a body of work across digital health,
+                medical education and acute medicine.
+              </Reveal>
+              <ol className="mt-10 border-t border-line">
+                {writing.map((p, i) => (
+                  <Reveal as="li" key={p.doi} delay={i * 70}>
+                    <div className="border-b border-line py-6">
+                      <h3 className="max-w-3xl font-serif text-lg text-ink text-pretty">
+                        {p.title}
+                      </h3>
+                      <div className="mt-2 text-sm text-muted">
+                        {p.meta} ·{" "}
+                        <a
+                          href={`https://doi.org/${p.doi}`}
+                          className="font-mono text-xs text-accent underline decoration-line underline-offset-4 transition-colors hover:decoration-accent"
+                        >
+                          {p.doi} ↗
+                        </a>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </ol>
+              <Reveal className="mt-8">
+                <Link
+                  href="/about#publications"
+                  className="link-underline font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink"
+                >
+                  All publications →
+                </Link>
+              </Reveal>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section id="contact">
+        <Container className="py-20">
+          <div className="grid gap-10 sm:grid-cols-[8rem_1fr] sm:gap-16">
+            <div className="sm:sticky sm:top-24 sm:self-start">
+              <Eyebrow>Contact</Eyebrow>
+            </div>
+            <Reveal>
+              <p className="max-w-xl font-serif text-heading text-ink text-balance">
+                Whether it&rsquo;s Portfol.io, MedPrep, research or clinical work
+                — I&rsquo;m happy to hear from you.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[var(--tracking-label)]">
+                <a href="mailto:peter.woods@me.com" className="link-underline text-ink">
+                  peter.woods@me.com
+                </a>
+                <a href="https://www.linkedin.com/in/DrPWoods/" className="link-underline text-ink">
+                  LinkedIn ↗
+                </a>
+                <a href="https://orcid.org/0000-0002-0910-8291" className="link-underline text-ink">
+                  ORCID ↗
+                </a>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </section>

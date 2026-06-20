@@ -28,6 +28,65 @@ export function Divider({ className = "" }: { className?: string }) {
   return <hr className={`border-0 border-t border-line ${className}`} />;
 }
 
+// Inline icons (stroke = currentColor), kept tiny for meta chips.
+const iconBase = {
+  width: 15,
+  height: 15,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.6,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+export function PinIcon() {
+  return (
+    <svg {...iconBase} aria-hidden="true">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+export function CapIcon() {
+  return (
+    <svg {...iconBase} aria-hidden="true">
+      <path d="M22 9 12 5 2 9l10 4 10-4Z" />
+      <path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5" />
+    </svg>
+  );
+}
+
+export function BadgeIcon() {
+  return (
+    <svg {...iconBase} aria-hidden="true">
+      <rect x="4" y="3" width="16" height="18" rx="2" />
+      <path d="M9 7h6M9 11h6M9 15h3" />
+    </svg>
+  );
+}
+
+// Icon + labelled value, used for the hero credential row.
+export function MetaItem({
+  icon,
+  label,
+  value,
+}: {
+  icon: ReactNode;
+  label: string;
+  value: string;
+}) {
+  return (
+    <span className="inline-flex items-center gap-2">
+      <span className="text-faint">{icon}</span>
+      <span className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-muted">
+        <span className="text-faint">{label}</span> {value}
+      </span>
+    </span>
+  );
+}
+
 export function SectionHeading({
   index,
   label,
@@ -156,7 +215,7 @@ export function SiteHeader() {
           Dr Peter Woods
         </Link>
         <nav className="flex items-center gap-5 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-muted">
-          <Link href="/#work" className="transition-colors hover:text-ink">
+          <Link href="/work" className="transition-colors hover:text-ink">
             Work
           </Link>
           <Link href="/about" className="transition-colors hover:text-ink">

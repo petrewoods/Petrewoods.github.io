@@ -38,10 +38,10 @@ export default function Annwn() {
         <div className="absolute inset-x-0 top-0 -z-10 h-px bg-white/10" />
         <Container className="pb-16 pt-32">
           <Link
-            href="/"
+            href="/work"
             className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-zinc-500 transition-colors hover:text-zinc-200"
           >
-            ← Index
+            ← Work
           </Link>
           <div className="mt-8">
             <span className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-zinc-500">
