@@ -47,7 +47,7 @@ export default function MedPrep() {
             </p>
             <div className="mt-8">
               <a
-                href="https://apps.apple.com/us/app/medprep/id6748531069"
+                href="https://apps.apple.com/gb/app/medprep/id6748531069"
                 className="inline-flex w-fit items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:border-ink"
               >
                 Download on the App Store ↗
@@ -153,7 +153,7 @@ export default function MedPrep() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://apps.apple.com/us/app/medprep/id6748531069"
+              href="https://apps.apple.com/gb/app/medprep/id6748531069"
               className="inline-flex w-fit items-center gap-2 rounded-full border border-ink bg-ink px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-paper transition-opacity hover:opacity-80"
             >
               Download on the App Store ↗

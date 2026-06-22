@@ -54,7 +54,13 @@ export default function Portfolio() {
               trainees. Speak after a case and a structured ePortfolio entry is
               generated for you — already mapped to the curriculum.
             </Reveal>
-            <Reveal delay={240} className="mt-8">
+            <Reveal delay={240} className="mt-8 flex flex-wrap items-center gap-5">
+              <a
+                href="https://apps.apple.com/gb/app/portfol-io/id6773316100"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-ink px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:bg-ink hover:text-paper"
+              >
+                Download on the App Store ↗
+              </a>
               <a
                 href="https://petrewoods.github.io/portfol-io-policies"
                 className="link-underline font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink"
