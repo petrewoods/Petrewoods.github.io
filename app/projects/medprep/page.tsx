@@ -35,19 +35,19 @@ export default function MedPrep() {
             ← Work
           </Link>
           <div className="mt-8 max-w-3xl">
-            <Eyebrow>Clinical Simulation &amp; Education · 2024</Eyebrow>
+            <Eyebrow>Clinical Simulation &amp; Education · Live</Eyebrow>
             <h1 className="mt-5 font-serif text-title text-ink text-balance">
               MedPrep
             </h1>
             <p className="mt-6 text-lead text-ink-soft text-pretty">
               A high-fidelity mock interview tool with instant, AI-powered
               feedback. I built it to prepare for competitive training
-              programmes — and, using it, scored full marks on my own entry. It
-              is now being built for applicants everywhere.
+              programmes — and, using it, scored full marks on my own entry.
+              It&rsquo;s now live for applicants everywhere.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 border-t border-line pt-10 sm:grid-cols-3">
-            <Stat value="Full marks" label="On my own entry" />
+            <Stat value="Live" label="Now available" />
             <Stat value="IMT · ST" label="Built for" />
             <Stat value="Instant" label="AI feedback" />
           </div>

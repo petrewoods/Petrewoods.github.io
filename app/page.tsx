@@ -19,7 +19,7 @@ const building = [
   },
   {
     name: "MedPrep",
-    status: "In development",
+    status: "Live",
     href: "/projects/medprep",
     blurb:
       "High-fidelity mock interview tool with instant AI feedback, for IMT, ST and specialty applicants.",
