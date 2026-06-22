@@ -22,7 +22,7 @@ const groups = [
       },
       {
         name: "MedPrep",
-        status: "Live",
+        status: "Live · iOS",
         href: "/projects/medprep",
         blurb:
           "High-fidelity mock interview tool with instant AI feedback, for IMT, ST and specialty applicants.",

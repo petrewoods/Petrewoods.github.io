@@ -35,7 +35,7 @@ export default function MedPrep() {
             ← Work
           </Link>
           <div className="mt-8 max-w-3xl">
-            <Eyebrow>Clinical Simulation &amp; Education · Live</Eyebrow>
+            <Eyebrow>Clinical Simulation &amp; Education · Live on iOS</Eyebrow>
             <h1 className="mt-5 font-serif text-title text-ink text-balance">
               MedPrep
             </h1>
@@ -45,6 +45,14 @@ export default function MedPrep() {
               programmes — and, using it, scored full marks on my own entry.
               It&rsquo;s now live for applicants everywhere.
             </p>
+            <div className="mt-8">
+              <a
+                href="https://apps.apple.com/us/app/medprep/id6748531069"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:border-ink"
+              >
+                Download on the App Store ↗
+              </a>
+            </div>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 border-t border-line pt-10 sm:grid-cols-3">
             <Stat value="Live" label="Now available" />
@@ -143,12 +151,20 @@ export default function MedPrep() {
           <p className="max-w-md font-serif text-heading text-ink text-balance">
             Preparing for IMT, ST or specialty applications?
           </p>
-          <a
-            href="mailto:peter.woods@me.com"
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:border-ink"
-          >
-            Get in touch →
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://apps.apple.com/us/app/medprep/id6748531069"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-ink bg-ink px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-paper transition-opacity hover:opacity-80"
+            >
+              Download on the App Store ↗
+            </a>
+            <a
+              href="mailto:peter.woods@me.com"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:border-ink"
+            >
+              Get in touch →
+            </a>
+          </div>
         </Container>
       </section>
     </div>
