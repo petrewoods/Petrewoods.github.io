@@ -24,20 +24,6 @@ const building = [
     blurb:
       "High-fidelity mock interview tool with instant AI feedback, for IMT, ST and specialty applicants.",
   },
-  {
-    name: "Match Model",
-    status: "World Cup 2026",
-    href: "/projects/football",
-    blurb:
-      "A Poisson prediction model for the 2026 World Cup, benchmarked week by week against bookmaker odds.",
-  },
-  {
-    name: "Annwn",
-    status: "Hundred Heads",
-    href: "/projects/annwn",
-    blurb:
-      "Interactive LED clouds that read the crowd below and answer in light — Fadecandy, a Raspberry Pi and a Kinect.",
-  },
 ];
 
 const experience = [
@@ -86,14 +72,28 @@ export default function Home() {
           </Reveal>
           <Reveal as="p" delay={160} className="mt-6 max-w-2xl text-lead text-ink-soft text-pretty">
             A physician, researcher and builder — currently an Internal Medicine
-            Trainee in Manchester. My work spans acute and general medicine,
-            clinical research, and software that makes clinical life a little
-            easier.
+            Trainee in Manchester.
+          </Reveal>
+          <Reveal as="ul" delay={200} className="mt-6 flex flex-wrap gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-muted">
+            {["Clinical medicine", "Research", "Technology"].map((item) => (
+              <li key={item} className="inline-flex items-center gap-2">
+                <span className="text-accent">—</span>
+                {item}
+              </li>
+            ))}
           </Reveal>
           <Reveal delay={240} className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
             <MetaItem icon={<PinIcon />} label="Based" value="Manchester" />
-            <MetaItem icon={<CapIcon />} label="Studied" value="Oxford & Warwick" />
+            <MetaItem icon={<CapIcon />} value="Oxford & Warwick" />
             <MetaItem icon={<BadgeIcon />} label="GMC" value="7751182" />
+          </Reveal>
+          <Reveal delay={320} className="mt-10">
+            <a
+              href="/Dr-Peter-Woods-CV.pdf"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:border-ink"
+            >
+              Download CV ↓
+            </a>
           </Reveal>
         </Container>
       </section>
@@ -106,8 +106,7 @@ export default function Home() {
             </div>
             <div>
               <Reveal as="p" className="max-w-xl text-lead text-ink-soft text-pretty">
-                Tools and experiments — clinical software I ship for doctors, and
-                things I make for the curiosity of it.
+                Clinical software I design and ship for doctors and trainees.
               </Reveal>
               <ul className="mt-10 border-t border-line">
                 {building.map((b, i) => (
@@ -139,7 +138,7 @@ export default function Home() {
                   href="/work"
                   className="link-underline font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink"
                 >
-                  All work →
+                  All work, including data &amp; experiments →
                 </Link>
               </Reveal>
             </div>
@@ -246,6 +245,9 @@ export default function Home() {
                 </a>
                 <a href="https://orcid.org/0000-0002-0910-8291" className="link-underline text-ink">
                   ORCID ↗
+                </a>
+                <a href="/Dr-Peter-Woods-CV.pdf" className="link-underline text-ink">
+                  CV ↓
                 </a>
               </div>
             </Reveal>

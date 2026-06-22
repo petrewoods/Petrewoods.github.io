@@ -74,14 +74,15 @@ export function MetaItem({
   value,
 }: {
   icon: ReactNode;
-  label: string;
+  label?: string;
   value: string;
 }) {
   return (
     <span className="inline-flex items-center gap-2">
       <span className="text-faint">{icon}</span>
       <span className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-muted">
-        <span className="text-faint">{label}</span> {value}
+        {label ? <span className="text-faint">{label} </span> : null}
+        {value}
       </span>
     </span>
   );
@@ -262,6 +263,12 @@ export function SiteFooter() {
             className="transition-colors hover:text-ink"
           >
             ORCID
+          </a>
+          <a
+            href="/Dr-Peter-Woods-CV.pdf"
+            className="transition-colors hover:text-ink"
+          >
+            CV
           </a>
         </div>
       </Container>

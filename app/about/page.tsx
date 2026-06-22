@@ -52,6 +52,13 @@ const experience = [
       "Research fellow at the largest Level 1 neurorehabilitation unit in the country, with a national focus on neurorehabilitation.",
   },
   {
+    when: "2022 – 2024",
+    role: "Bedside Teaching",
+    org: "University of Buckingham · CERU",
+    detail:
+      "Designed and delivered the Special Senses bedside-teaching programme for Buckingham medical students, organised through the unit.",
+  },
+  {
     when: "Aug 2020 – Aug 2022",
     role: "Junior Doctor · Foundation Programme",
     org: "UHCW · SWFT · CWPT",
@@ -214,7 +221,7 @@ export default function About() {
                   <div className="font-serif text-lg text-ink">{q.qual}</div>
                   <div className="text-sm text-muted">{q.inst}</div>
                   {q.note ? (
-                    <div className="mt-1 text-sm text-accent">{q.note}</div>
+                    <div className="mt-1 text-sm text-muted">{q.note}</div>
                   ) : null}
                 </div>
                 <div className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-faint sm:text-right">
@@ -223,6 +230,13 @@ export default function About() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-sm text-muted">
+            <span className="font-mono text-xs uppercase tracking-[var(--tracking-label)] text-faint">
+              Certifications
+            </span>{" "}
+            Good Clinical Practice (NIHR, 2021) · Coding for Healthcare
+            Professionals (Code Med)
+          </p>
         </Container>
       </section>
 
@@ -271,12 +285,20 @@ export default function About() {
             <p className="max-w-md font-serif text-heading text-ink text-balance">
               For collaboration, research or clinical work — get in touch.
             </p>
-            <a
-              href="mailto:peter.woods@me.com"
-              className="inline-flex w-fit items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:border-ink"
-            >
-              Email me →
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="mailto:peter.woods@me.com"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:border-ink"
+              >
+                Email me →
+              </a>
+              <a
+                href="/Dr-Peter-Woods-CV.pdf"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-line px-6 py-3 font-mono text-xs uppercase tracking-[var(--tracking-label)] text-ink transition-colors hover:border-ink"
+              >
+                Download CV ↓
+              </a>
+            </div>
           </div>
         </Container>
       </section>
